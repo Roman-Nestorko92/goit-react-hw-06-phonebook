@@ -1,7 +1,26 @@
 @import-normalize; /* bring in normalize.css styles */
 
+:root {
+  --main-text-color: #2b2b2b;
+  --second-text-color: #ffffff;
+  --accent-text-color: #0084ff;
+  --main-phone-color: rgb(209, 209, 4);
+
+  --main-bg-color: #ffffff;
+  --second-bg-color: #2b2b2b;
+  --accent-bg-color: #0084ff;
+
+  --main-hover-animation: 250ms linear;
+}
+
 body {
   margin: 0;
+  padding: 0;
+  background-image: url(./components/App/img/urban-min.jpg);
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-size: cover;
+  color: whitesmoke;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;

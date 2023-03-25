@@ -1,0 +1,74 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: var(--accent-bg-color);
+  color: yellow;
+  border-radius: 4px;
+
+  margin-right: 5px;
+  padding: 12px;
+}
+
+@media screen and (min-width: 768px) {
+  .icon {
+    margin-right: 20px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .icon {
+    margin-right: 30px;
+  }
+}
+
+.name {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-style: italic;
+}
+
+.number {
+  font-weight: 700;
+  margin-right: 5px;
+}
+
+@media screen and (min-width: 768px) {
+  .number {
+    margin-right: 20px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .number {
+    margin-right: 30px;
+  }
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 30px;
+  height: 30px;
+  padding: 10px;
+
+  border: none;
+  background-color: blue;
+
+  color: yellow;
+
+  cursor: pointer;
+  transition: background-color var(--main-hover-animation);
+}
+
+.button:hover,
+.button:focus {
+  background-color: var(--accent-bg-color);
+}
