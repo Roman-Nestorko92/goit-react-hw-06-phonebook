@@ -1,9 +1,11 @@
-.wrapper {
+import styled from '@emotion/styled';
+
+export const Wrapper = styled.div`
   display: flex;
   align-items: center;
-}
+`;
 
-.icon {
+export const Icon = styled.span`
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -14,43 +16,28 @@
 
   margin-right: 5px;
   padding: 12px;
-}
 
-@media screen and (min-width: 768px) {
-  .icon {
+  @media screen and (min-width: 768px) {
     margin-right: 20px;
   }
-}
 
-@media screen and (min-width: 1440px) {
-  .icon {
+  @media screen and (min-width: 1440px) {
     margin-right: 30px;
   }
-}
+`;
 
-.name {
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  font-style: italic;
-}
-
-.number {
+export const Number = styled.p`
   font-weight: 700;
   margin-right: 5px;
-}
-
-@media screen and (min-width: 768px) {
-  .number {
+  @media screen and (min-width: 768px) {
     margin-right: 20px;
   }
-}
-
-@media screen and (min-width: 1440px) {
-  .number {
+  @media screen and (min-width: 1440px) {
     margin-right: 30px;
   }
-}
+`;
 
-.button {
+export const Button = styled.button`
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -60,15 +47,14 @@
   padding: 10px;
 
   border: none;
-  background-color: blue;
-
-  color: yellow;
+  background-color: #2b2b2b;
+  color: var(--second-text-color);
 
   cursor: pointer;
   transition: background-color var(--main-hover-animation);
-}
 
-.button:hover,
-.button:focus {
-  background-color: var(--accent-bg-color);
-}
+  :hover,
+  :focus {
+    background-color: var(--accent-bg-color);
+  }
+`;

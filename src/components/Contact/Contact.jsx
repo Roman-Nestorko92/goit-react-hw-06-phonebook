@@ -1,22 +1,22 @@
 import PropTypes from 'prop-types';
 import { FaTrash, FaUserAlt } from 'react-icons/fa';
-import css from './Contact.module.css';
+import { Button, Icon, Number, Wrapper } from './Contact.styled';
 
 function Contact({ name, number, onDeleteContact }) {
   return (
     <>
-      <div className={css.wrapper}>
-        <span className={css.icon}>
+      <Wrapper>
+        <Icon>
           <FaUserAlt />
-        </span>
+        </Icon>
         <p>{name}</p>
-      </div>
-      <div className={css.wrapper}>
-        <p className={css.number}>{number}</p>
-        <button className={css.button} type="button" onClick={onDeleteContact}>
+      </Wrapper>
+      <Wrapper>
+        <Number>{number}</Number>
+        <Button type="button" onClick={onDeleteContact}>
           <FaTrash />
-        </button>
-      </div>
+        </Button>
+      </Wrapper>
     </>
   );
 }

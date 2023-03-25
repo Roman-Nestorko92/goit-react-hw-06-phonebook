@@ -2,21 +2,21 @@ import PropTypes from 'prop-types';
 import { useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { AiOutlineClose } from 'react-icons/ai';
-import css from './Modal.module.css';
+import { Backdrop, ModalWrapper, Title, Wrapper, Button } from './Modal.styled';
 
 const modalRoot = document.getElementById('modal-root');
 
-function Modal({ children, onClose, title }) {
+function Modal({ children, onClose }) {
   useEffect(() => {
-    const onKeyDown = e => {
+    const onPessKeyDown = e => {
       if (e.code === 'Escape') {
         onClose();
       }
     };
 
-    window.addEventListener('keydown', onKeyDown);
+    window.addEventListener('keydown', onPessKeyDown);
 
-    return () => window.removeEventListener('keydown', onKeyDown);
+    return () => window.removeEventListener('keydown', onPessKeyDown);
   }, [onClose]);
 
   const onBackdropClick = e => {
@@ -24,17 +24,17 @@ function Modal({ children, onClose, title }) {
   };
 
   return createPortal(
-    <div className={css.backdrop} onClick={onBackdropClick}>
-      <div className={css.modal}>
-        <div className={css.wrapper}>
-          <h2 className={css.title}>{title}</h2>
-          <button className={css.button} type="button" onClick={onClose}>
+    <Backdrop onClick={onBackdropClick}>
+      <ModalWrapper>
+        <Wrapper>
+          <Title>add contact</Title>
+          <Button type="button" onClick={onClose}>
             <AiOutlineClose />
-          </button>
-        </div>
+          </Button>
+        </Wrapper>
         {children}
-      </div>
-    </div>,
+      </ModalWrapper>
+    </Backdrop>,
     modalRoot
   );
 }
@@ -42,7 +42,6 @@ function Modal({ children, onClose, title }) {
 Modal.prototype = {
   children: PropTypes.element,
   onClose: PropTypes.func.isRequired,
-  title: PropTypes.string,
 };
 
 export default Modal;
