@@ -28,4 +28,3 @@ Contact.prototype = {
 };
 
 export default Contact;
-//className={css.name}
